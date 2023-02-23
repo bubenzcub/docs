@@ -6,6 +6,7 @@ redirect_from:
   - /admin/user-management/removing-users-from-teams-and-organizations
 versions:
   ghes: '*'
+  ghae: '*'
 type: how_to
 topics:
   - Access management
@@ -18,11 +19,13 @@ Only owners or team admins can remove organization members. When a user is remov
 
 {% warning %}
 
-**Warning**: When you remove a user from an organization, they will lose access to any private forks they have of your organization's **private repositories**. They may still have local copies of those forks. However, they will be unable to sync them with your organization's repositories. You are responsible for ensuring that people who have lost access to a repository delete any confidential information or intellectual property. If the user removed from your organization was an organization member, their access to private forks of organization repositories can be restored if the user is [reinstated as an organization member](/articles/reinstating-a-former-member-of-your-organization) within three months of being removed from an organization.
+**Warning**: When you remove a user from an organization, they will lose access to any private forks they have of your organization's **private repositories**. They may still have local copies of those forks. However, they will be unable to sync them with your organization's repositories. You are responsible for ensuring that people who have lost access to a repository delete any confidential information or intellectual property. If the user removed from your organization was an organization member, their access to private forks of organization repositories can be restored if the user is [reinstated as an organization member](/organizations/managing-membership-in-your-organization/reinstating-a-former-member-of-your-organization) within three months of being removed from an organization.
 
 {% endwarning %}
 
 ## Removing a team member
+
+{% ifversion ghes %}
 
 {% warning %}
 
@@ -32,8 +35,10 @@ To remove an existing member of a team synced to an LDAP group, contact your LDA
 
 {% endwarning %}
 
+{% endif %}
+
 {% data reusables.profile.access_org %}
-{% data reusables.user_settings.access_org %}
+{% data reusables.user-settings.access_org %}
 {% data reusables.organizations.specific_team %}
 4. Select the person or people you'd like to remove.
 ![Check box next to organization member](/assets/images/help/teams/team-member-check-box.png)
@@ -43,7 +48,7 @@ To remove an existing member of a team synced to an LDAP group, contact your LDA
 ## Removing a user from an organization
 
 {% data reusables.profile.access_org %}
-{% data reusables.user_settings.access_org %}
+{% data reusables.user-settings.access_org %}
 {% data reusables.organizations.people %}
 4. Next to the name of the users you want to remove from the organization, click the check box.
 ![Remove user checkbox](/assets/images/help/organizations/Organization-remove-user.png)

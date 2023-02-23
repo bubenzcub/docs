@@ -7,14 +7,13 @@ services:
       - '4000:4000'
     environment:
       NODE_ENV: ${NODE_ENV}
+      NODE_OPTIONS: ${NODE_OPTIONS}
       DD_API_KEY: ${DD_API_KEY}
       COOKIE_SECRET: ${COOKIE_SECRET}
       HYDRO_ENDPOINT: ${HYDRO_ENDPOINT}
       HYDRO_SECRET: ${HYDRO_SECRET}
       HAYSTACK_URL: ${HAYSTACK_URL}
-      WEB_CONCURRENCY: ${WEB_CONCURRENCY}
       HEROKU_APP_NAME: ${HEROKU_APP_NAME}
-      ENABLED_LANGUAGES: ${ENABLED_LANGUAGES}
       DEPLOYMENT_ENV: ${DEPLOYMENT_ENV}
       HEROKU_PRODUCTION_APP: true
       PORT: 4000
@@ -24,9 +23,10 @@ services:
     restart: always
 
   datadog-agent:
-    image: datadog/dogstatsd:7.32.4
+    image: 'ghdocsprod.azurecr.io/datadog/dogstatsd:7.32.4'
     ports:
       - '8125:8125'
     environment:
       DD_API_KEY: ${DD_API_KEY}
       DD_AGENT_HOST: datadog-agent
+      DD_HISTOGRAM_PERCENTILES: 0.99 0.95 0.50

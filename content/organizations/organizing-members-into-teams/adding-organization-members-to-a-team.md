@@ -19,7 +19,7 @@ shortTitle: Add members to a team
 {% data reusables.organizations.team-synchronization %}
 
 {% data reusables.profile.access_org %}
-{% data reusables.user_settings.access_org %}
+{% data reusables.user-settings.access_org %}
 {% data reusables.organizations.specific_team %}
 {% data reusables.organizations.team_members_tab %}
 6. Above the list of team members, click **Add a member**.
@@ -31,5 +31,5 @@ shortTitle: Add members to a team
 
 ## Further reading
 
-- "[About teams](/articles/about-teams)"
-- "[Managing team access to an organization repository](/articles/managing-team-access-to-an-organization-repository)"
+- "[AUTOTITLE](/organizations/organizing-members-into-teams/about-teams)"
+- "[AUTOTITLE](/organizations/managing-user-access-to-your-organizations-repositories/managing-team-access-to-an-organization-repository)"

@@ -12,7 +12,7 @@ topics:
 shortTitle: Unblock from your account
 ---
 
-When you unblock a user, they'll be able to invite you to be a collaborator to their repositories. If they [@mention you](/articles/basic-writing-and-formatting-syntax/#mentioning-people-and-teams) anywhere on GitHub, you'll receive notifications.
+When you unblock a user, they'll be able to invite you to be a collaborator to their repositories. If they [@mention you](/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#mentioning-people-and-teams) anywhere on GitHub, you'll receive notifications.
 
 In repositories you own, the user will be able to collaborate normally.
 
@@ -20,8 +20,8 @@ You can unblock a user in your account settings or from the user's profile page.
 
 ## Unblocking a user in your account settings
 
-{% data reusables.user_settings.access_settings %}
-{% data reusables.user_settings.blocked_users %}
+{% data reusables.user-settings.access_settings %}
+{% data reusables.user-settings.blocked_users %}
 3. Under "Blocked users", next to the user you'd like to unblock, click **Unblock**.
 ![Unblock user button](/assets/images/help/organizations/org-unblock-user-button.png)
 
@@ -41,7 +41,7 @@ You can unblock a user in your account settings or from the user's profile page.
 
 ## Further reading
 
-- "[Blocking a user from your personal account](/communities/maintaining-your-safety-on-github/blocking-a-user-from-your-personal-account)"
-- "[Blocking a user from your organization](/communities/maintaining-your-safety-on-github/blocking-a-user-from-your-organization)"
-- "[Unblocking a user from your organization](/communities/maintaining-your-safety-on-github/unblocking-a-user-from-your-organization)"
-- "[Reporting abuse or spam](/communities/maintaining-your-safety-on-github/reporting-abuse-or-spam)"
+- "[AUTOTITLE](/communities/maintaining-your-safety-on-github/blocking-a-user-from-your-personal-account)"
+- "[AUTOTITLE](/communities/maintaining-your-safety-on-github/blocking-a-user-from-your-organization)"
+- "[AUTOTITLE](/communities/maintaining-your-safety-on-github/unblocking-a-user-from-your-organization)"
+- "[AUTOTITLE](/communities/maintaining-your-safety-on-github/reporting-abuse-or-spam)"

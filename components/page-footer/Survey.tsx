@@ -6,6 +6,8 @@ import { useTranslation } from 'components/hooks/useTranslation'
 import { Link } from 'components/Link'
 import { sendEvent, EventType } from 'components/lib/events'
 
+import styles from './Survey.module.scss'
+
 enum ViewState {
   START = 'START',
   YES = 'YES',
@@ -14,7 +16,7 @@ enum ViewState {
 }
 
 export const Survey = () => {
-  const { asPath } = useRouter()
+  const { asPath, locale } = useRouter()
   const { t } = useTranslation('survey')
   const [state, setState] = useState<ViewState>(ViewState.START)
   const [isEmailError, setIsEmailError] = useState(false)
@@ -26,6 +28,19 @@ export const Survey = () => {
     // to the page you started on.
     setState(ViewState.START)
   }, [asPath])
+
+  useEffect(() => {
+    // After the form is submitted we need to manually set the focus since we
+    // remove the form inputs after submit.  The privacy policy link is the
+    // next focusable element in the footer so we focus that.
+    if (state === ViewState.END) {
+      document
+        .querySelector<HTMLAnchorElement>(
+          `footer a[href="/${locale}/site-policy/privacy-policies/github-privacy-statement"]`
+        )
+        ?.focus()
+    }
+  }, [state])
 
   function vote(state: ViewState) {
     return () => {
@@ -73,12 +88,12 @@ export const Survey = () => {
       {state !== ViewState.END && (
         <div className="radio-group mb-2">
           <input
+            className={cx(styles.visuallyHidden, styles.customRadio)}
             id="survey-yes"
             type="radio"
             name="survey-vote"
             value="Y"
             aria-label={t`yes`}
-            hidden
             onChange={vote(ViewState.YES)}
             checked={state === ViewState.YES}
           />
@@ -92,12 +107,12 @@ export const Survey = () => {
             <ThumbsupIcon size={16} className={state === ViewState.YES ? '' : 'color-fg-muted'} />
           </label>
           <input
+            className={cx(styles.visuallyHidden, styles.customRadio)}
             id="survey-no"
             type="radio"
             name="survey-vote"
             value="N"
             aria-label={t`no`}
-            hidden
             onChange={vote(ViewState.NO)}
             checked={state === ViewState.NO}
           />
@@ -174,12 +189,12 @@ export const Survey = () => {
       )}
 
       {state === ViewState.END && (
-        <p className="color-fg-muted f6" data-testid="survey-end">{t`feedback`}</p>
+        <p role="status" className="color-fg-muted f6" data-testid="survey-end">{t`feedback`}</p>
       )}
 
       <Link
         className="f6 text-normal color-fg-accent"
-        href="/github/site-policy/github-privacy-statement"
+        href={`/${locale}/site-policy/privacy-policies/github-privacy-statement`}
         target="_blank"
       >
         {t`privacy_policy`}
@@ -188,7 +203,7 @@ export const Survey = () => {
   )
 }
 
-function trackEvent(formData: FormData | undefined) {
+function trackEvent(formData?: FormData) {
   if (!formData) return
   // Nota bene: convert empty strings to undefined
   return sendEvent({

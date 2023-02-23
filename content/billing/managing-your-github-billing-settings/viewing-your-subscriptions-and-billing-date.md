@@ -21,8 +21,8 @@ shortTitle: Subscriptions & billing date
 ---
 ## Finding your personal account's next billing date
 
-{% data reusables.user_settings.access_settings %}
-{% data reusables.user_settings.billing_plans %}
+{% data reusables.user-settings.access_settings %}
+{% data reusables.user-settings.billing_plans %}
 {% data reusables.dotcom_billing.next_billing_date %}
 
 ## Finding your organization's next billing date
@@ -34,4 +34,4 @@ shortTitle: Subscriptions & billing date
 
 ## Further reading
 
-- "[About billing for {% data variables.product.prodname_dotcom %} accounts](/articles/about-billing-for-github-accounts)"
+- "[AUTOTITLE](/billing/managing-billing-for-your-github-account/about-billing-for-github-accounts)"

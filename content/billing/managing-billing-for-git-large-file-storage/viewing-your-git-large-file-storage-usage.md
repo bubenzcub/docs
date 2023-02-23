@@ -21,8 +21,8 @@ shortTitle: View Git LFS usage
 
 ## Viewing storage and bandwidth usage for a personal account
 
-{% data reusables.user_settings.access_settings %}
-{% data reusables.user_settings.billing_plans %}
+{% data reusables.user-settings.access_settings %}
+{% data reusables.user-settings.billing_plans %}
 {% data reusables.dotcom_billing.lfs-data %}
 
 ## Viewing storage and bandwidth usage for an organization
@@ -34,5 +34,5 @@ shortTitle: View Git LFS usage
 
 ## Further reading
 
-- "[About storage and bandwidth usage](/articles/about-storage-and-bandwidth-usage)"
-- "[Upgrading {% data variables.large_files.product_name_long %}](/articles/upgrading-git-large-file-storage/)"
+- "[AUTOTITLE](/repositories/working-with-files/managing-large-files/about-storage-and-bandwidth-usage)"
+- "[AUTOTITLE](/billing/managing-billing-for-git-large-file-storage/upgrading-git-large-file-storage)"
